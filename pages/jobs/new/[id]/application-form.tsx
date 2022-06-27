@@ -188,6 +188,16 @@ export default function JobsNew() {
     return result;
   };
 
+  /**
+   * @description Reorder the fields via drag.
+   *
+   * @return void
+   */
+  async function reorderField(fieldId: number) {
+    console.log();
+    // const response = await axios.delete(`/api/application-forms/delete-field/${fieldId}`);
+  }
+
   return (
     <Shell>
       <header>
