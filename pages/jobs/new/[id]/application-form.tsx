@@ -194,7 +194,7 @@ export default function JobsNew() {
    * @return void
    */
   async function reorderField(fieldId: number) {
-    console.log();
+    console.log(fieldId);
     // const response = await axios.delete(`/api/application-forms/delete-field/${fieldId}`);
   }
 
