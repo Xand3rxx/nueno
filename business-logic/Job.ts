@@ -7,11 +7,15 @@ import prisma from "@helpers/prisma";
 
 export default class JobEntity {
   async findByUuid(uid: string) {
-    return prisma.job.findUnique({
+    const job = prisma.job.findUnique({
       where: {
         uid,
       },
     });
+
+    if (!job) throw new NotFoundError("Not found");
+
+    return job;
   }
 
   async create(params: JobsCreateRequestParams, userId: number) {
