@@ -13,7 +13,7 @@ const user = {
 };
 const navigation = [
   { name: "Jobs", href: "/jobs", current: true },
-  { name: "Candidates", href: "/candidates", current: false },
+  { name: "Candidates", href: "#", current: false },
   { name: "Inbox", href: "#", current: false },
   { name: "Agenda", href: "#", current: false },
 ];

@@ -5,6 +5,8 @@ import { useQuery } from "react-query";
 
 import Shell from "@components/Shell";
 
+import DefaultAvatar from "../../../public/default-avatar.png";
+
 export const DropdownCaret = () => (
   <svg
     aria-hidden="true"
@@ -166,11 +168,22 @@ export default function Jobs() {
               style={{ cursor: "auto" }}>
               <div className="relative flex-shrink-0 w-32 h-32">
                 <div className="absolute top-0 left-0 flex items-center justify-center w-full h-full">
+                  {/* <Image
+                    className="absolute top-0 left-0 object-cover object-center w-full h-full transition duration-50"
+                    src="https://mdbcdn.b-cdn.net/img/new/avatars/9.webp"
+                    alt="Placeholder Photo"
+                    onError={() => {
+                      setImageFallback(DefaultAvatar.src);
+                    }}
+                    width={100}
+                    height={150}
+                  /> */}
                   <img
                     alt="Placeholder Photo"
                     className="absolute top-0 left-0 object-cover object-center w-full h-full transition duration-50"
                     loading="lazy"
                     src="https://mdbcdn.b-cdn.net/img/new/avatars/9.webp"
+                    onError={(e) => (e.currentTarget.src = DefaultAvatar.src)}
                   />
                 </div>
               </div>
@@ -193,6 +206,7 @@ export default function Jobs() {
                     className="absolute top-0 left-0 object-cover object-center w-full h-full transition duration-50"
                     loading="lazy"
                     src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp"
+                    onError={(e) => (e.currentTarget.src = DefaultAvatar.src)}
                   />
                 </div>
               </div>
