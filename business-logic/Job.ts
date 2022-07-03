@@ -46,6 +46,7 @@ export default class JobEntity {
       where: {
         uid: jobUid,
       },
+      include: { Company: true },
     });
   }
 }
