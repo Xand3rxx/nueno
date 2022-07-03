@@ -63,7 +63,7 @@ export default function Jobs() {
               <div>
                 <div className="flex mb-3 ml-3 mr-3 ">
                   <div className="flex flex-wrap flex-grow-0  md:justify-end  border-t-[1px] border-t-[#7b8e8e] md:border-0 lg:mt-[25px] ">
-                    <Link href={`jobs/${job.uid}`}>
+                    <Link href={`/jobs/${job?.uid}/application-form`}>
                       <button
                         value="Junior"
                         className="bg-[#eef6f6] text-bg-gray-800 rounded-[5px] text-xs  font-bold hover:bg-gray-800 hover:text-white cursor-pointer mr-4 mb-4 pt-2 pb-[6px] px-2 my-2 ">

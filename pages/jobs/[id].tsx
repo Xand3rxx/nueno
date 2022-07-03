@@ -59,7 +59,7 @@ export default function JobDetail(props) {
           <h3 className="mb-4 text-base font-medium text-gray-900">Who we are Looking for</h3>
           <p className="text-gray-700">{job?.description}</p>
           <div className="flex justify-center my-3">
-            <Link href="#">
+            <Link href={`/jobs/${job?.uid}/application-form`}>
               <a className="px-4 py-2 text-white bg-teal-700 rounded-full">Apply for this job</a>
             </Link>
           </div>
