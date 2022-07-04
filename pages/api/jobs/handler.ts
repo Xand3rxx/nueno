@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const entity = new JobEntity();
 
   try {
-    const response: ResponseParams = await entity.find(req.query.id);
+    const response: ResponseParams = await entity.find(String(req.query.id));
     return res.status(200).json(response);
   } catch (error) {
     if (error instanceof HttpError) return res.status(error.code).json(error.message);

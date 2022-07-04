@@ -1,5 +1,5 @@
 import { Field } from "@prisma/client";
-import { FieldType } from "@prisma/client";
+import { FieldType, FieldChange } from "@prisma/client";
 
 export type FieldCreateRequestParams = {
   label: string;
@@ -7,6 +7,7 @@ export type FieldCreateRequestParams = {
   required: boolean;
   jobId: number;
   companyId: number | null;
+  fieldChange: FieldChange;
 };
 
 export type FieldCreateResponseParams = Field;

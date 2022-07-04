@@ -41,6 +41,7 @@ export default class JobEntity {
       include: { Company: true },
     });
   }
+
   async find(jobUid: string) {
     return prisma.job.findFirst({
       where: {

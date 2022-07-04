@@ -23,6 +23,7 @@ export default NextAuth({
           where: {
             email: credentials.email.toLowerCase(),
           },
+          include: { Company: true },
         });
 
         if (!user) return null;

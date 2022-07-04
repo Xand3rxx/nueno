@@ -25,6 +25,7 @@ export default class GenerateDefaultFields {
         required: true,
         jobId: job.id,
         companyId: user.companyId,
+        fieldChange: "FIXED",
       },
       {
         label: "Email Address",
@@ -32,13 +33,7 @@ export default class GenerateDefaultFields {
         required: true,
         jobId: job.id,
         companyId: user.companyId,
-      },
-      {
-        label: "Headline",
-        type: FieldType["SHORT_TEXT"],
-        required: false,
-        jobId: job.id,
-        companyId: user.companyId,
+        fieldChange: "FIXED",
       },
       {
         label: "Phone Number",
@@ -46,6 +41,15 @@ export default class GenerateDefaultFields {
         required: true,
         jobId: job.id,
         companyId: user.companyId,
+        fieldChange: "FIXED",
+      },
+      {
+        label: "Headline",
+        type: FieldType["SHORT_TEXT"],
+        required: false,
+        jobId: job.id,
+        companyId: user.companyId,
+        fieldChange: "NON_FIXED",
       },
       {
         label: "Address",
@@ -53,6 +57,7 @@ export default class GenerateDefaultFields {
         required: true,
         jobId: job.id,
         companyId: user.companyId,
+        fieldChange: "NON_FIXED",
       },
       {
         label: "Education History",
@@ -60,6 +65,7 @@ export default class GenerateDefaultFields {
         required: true,
         jobId: job.id,
         companyId: user.companyId,
+        fieldChange: "NON_FIXED",
       },
       {
         label: "Job Experience",
@@ -67,6 +73,7 @@ export default class GenerateDefaultFields {
         required: true,
         jobId: job.id,
         companyId: user.companyId,
+        fieldChange: "NON_FIXED",
       },
       {
         label: "Cover Letter",
@@ -74,6 +81,7 @@ export default class GenerateDefaultFields {
         required: false,
         jobId: job.id,
         companyId: user.companyId,
+        fieldChange: "NON_FIXED",
       },
     ];
 
