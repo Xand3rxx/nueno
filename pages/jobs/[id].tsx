@@ -7,7 +7,7 @@ import { useQuery } from "react-query";
 
 import Shell from "@components/Shell";
 
-export default function JobDetail(props) {
+export default function JobDetail() {
   const router = useRouter();
   const { id } = router.query;
   const { isLoading, data: job } = useQuery("job", () => getJob(id), {
@@ -30,11 +30,14 @@ export default function JobDetail(props) {
       <header className="flex flex-col items-center gap-4 my-5">
         <BriefcaseIcon className="w-20 h-20" />
         <h1 className="text-2xl">{job?.title}</h1>
-        <p>London, England United Kingdom &middot; customer Service &bull; Full time</p>
+        <span className="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-gray-200 text-gray-700 rounded-full">
+          Remote
+        </span>
+        <p>United Kingdom &middot; Full Time</p>
         <div className="w-full border-t-2 border-gray-100"></div>
         <ul className="flex justify-center w-full gap-3 pb-3 border-b">
           <li>
-            <a href="#" className="pb-3 text-teal-700 border-b-2 border-teal-700 border-solid ">
+            <a href="#" className="pb-3 text-indigo-700 border-b-2 border-indigo-700 border-solid ">
               Overview
             </a>
           </li>
@@ -46,10 +49,10 @@ export default function JobDetail(props) {
       <main className="flex flex-col items-center gap-4">
         <div className="w-2/3">
           <div className="flex justify-between mb-4">
-            <p className="text-xl text-gray-800">Description</p>
+            <p className="font-medium text-gray-800">Description</p>
             <p>
               <Link href="#">
-                <a className="text-teal-700">
+                <a className="text-indigo-700 font-medium">
                   Share this job
                   <ShareIcon className="inline-block w-4 h-4 ml-2" />
                 </a>
@@ -60,7 +63,9 @@ export default function JobDetail(props) {
           <p className="text-gray-700">{job?.description}</p>
           <div className="flex justify-center my-3">
             <Link href={`/jobs/${job?.uid}/application-form`}>
-              <a className="px-4 py-2 text-white bg-teal-700 rounded-full">Apply for this job</a>
+              <a className="px-4 py-2 text-white bg-indigo-700 w-full inline-block rounded-full hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 text-center mt-4">
+                Apply for this job
+              </a>
             </Link>
           </div>
         </div>

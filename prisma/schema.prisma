@@ -42,7 +42,8 @@ model Job {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  Field Field[]
+  Field     Field[]
+  Candidate Candidate[]
   @@index([uid])
 }
 
@@ -52,6 +53,11 @@ enum FieldType {
   CHECKBOX      @map("checkbox")
   SELECT        @map("select")
   MULTI_SELECT  @map("multi_select")
+}
+
+enum FieldChange {
+  FIXED      @map("fixed")
+  NON_FIXED  @map("non_fixed")
 }
 
 model Field {
@@ -66,6 +72,7 @@ model Field {
   Company     Company?      @relation(fields: [companyId], references: [id])
   companyId   Int?
   order       Int           @default(autoincrement())
+  fieldChange FieldChange   @default(NON_FIXED)
   createdAt   DateTime      @default(now())
   updatedAt   DateTime      @updatedAt
 }
@@ -87,4 +94,22 @@ model FieldChoice {
   Field     Field    @relation(fields: [fieldId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+enum CandidateStatus {
+  PENDING  @map("pending")
+  HIRED    @map("hired")
+  CLOSED   @map("closed")
+}
+
+model Candidate {
+  id        Int             @id @default(autoincrement())
+  name      String
+  email     String
+  phone     String
+  jobId     Int
+  Job       Job             @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  status    CandidateStatus @default(PENDING)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
 }
